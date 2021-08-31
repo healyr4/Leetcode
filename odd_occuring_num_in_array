@@ -1,0 +1,17 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+from collections import Counter
+def solution(A):
+    # write your code in Python 3.6
+    number = 0
+    length = len(A)
+    if(length==1):
+        return A[0]
+
+    dictA = Counter(A)
+    for key,val in dictA.items():
+        if val ==1:
+            number = key
+
+
+    return number
