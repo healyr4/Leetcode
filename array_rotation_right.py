@@ -4,6 +4,9 @@
 def solution(A, K):
     # write your code in Python 3.6
     # Shift A k times
+    
+    # Need to check for edge case if array is empty...
+    
     length = len(A)
     K = K% length
 
