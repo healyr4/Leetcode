@@ -1,0 +1,52 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+def solution(S, P, Q):
+    # write your code in Python 3.6
+    len_s = len(S)
+    A = [0]*len_s
+    C = [0]*len_s
+    G = [0]*len_s
+    T = [0]*len_s
+
+    a = c = g = t = 0
+    ret_arr = []
+    for i in range(len_s):
+        if S[i] == "A": 
+            a+=1
+        elif S[i]  == "C": 
+            c+=1
+        elif S[i]  == "G": 
+            g+=1
+        elif S[i]  == "T": 
+            t+=1
+        A[i] = a
+        C[i] = c
+        G[i] = g
+        T[i] = t
+    
+    for j in range(len(P)):
+        x = P[j]
+        y = Q[j]
+        if (x ==y ):
+            if S[x] == 'A':
+                ret_arr.append(1)
+            elif S[x] == "C":
+                ret_arr.append(2)
+            elif S[x] == "G":
+                ret_arr.append(3)
+            elif S[x] == "T":
+                ret_arr.append(4)
+        elif A[x] < A[y] or S[x] == 'A':
+            ret_arr.append(1)
+        elif C[x] < C[y] or S[x] == 'C':
+            ret_arr.append(2)
+        elif G[x] < G[y] or S[x] == 'G':
+            ret_arr.append(3)
+        elif T[x] < T[y] or S[x] == 'T':
+            ret_arr.append(4)
+    return ret_arr
+
+
+
+        
